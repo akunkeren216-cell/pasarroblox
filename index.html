@@ -3,70 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mas R - Jualan</title>
+    <title>Mas R - Dark Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { background-color: #f0fff4; } /* Warna hijau pucat sesuai gambar */
-        .btn-gradient { background: linear-gradient(to right, #059669, #10b981); }
-    </style>
 </head>
-<body class="font-sans">
+<body class="bg-black text-white font-sans min-h-screen">
 
-    <nav class="flex justify-between items-center p-5 bg-white shadow-sm">
-        <h1 class="text-2xl font-bold text-green-600">Mas R</h1>
-        <button class="text-gray-600"><i class="fas fa-bars text-2xl"></i></button>
-    </nav>
-
-    <div class="flex flex-col items-center mt-10 px-6 text-center">
-        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold mb-4">MAS R</span>
-        <h2 class="text-4xl font-extrabold text-slate-800">Halo, Saya <br><span class="text-green-600">MAS R</span></h2>
-        <p class="text-gray-600 mt-4 max-w-xs">Spesialis jualan produk digital & fisik. Proses cepat, aman, dan terpercaya.</p>
+    <div class="flex flex-col items-center pt-10 px-6 text-center">
+        <span class="bg-green-600 text-white px-4 py-1 rounded-full text-[10px] font-bold mb-4">MAS R</span>
+        <h2 class="text-3xl font-extrabold">Halo, Saya <br><span class="text-green-500">MAS R</span></h2>
+        <p class="text-gray-400 mt-2 text-sm px-4">Spesialis jualan produk digital & fisik. Cepat, aman, terpercaya.</p>
     </div>
 
     <div class="px-6 mt-8">
         <div class="relative max-w-md mx-auto">
-            <input type="text" id="searchInput" placeholder="Cari produk..." 
-                class="w-full p-3 pl-10 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 shadow-sm">
-            <i class="fas fa-search absolute left-3 top-4 text-gray-400"></i>
+            <input type="text" placeholder="Cari produk..." 
+                class="w-full p-3 pl-12 rounded-2xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 shadow-lg">
+            <i class="fas fa-search absolute left-4 top-4 text-gray-500"></i>
         </div>
     </div>
 
-    <div class="px-6 mt-10 mb-20">
-        <h3 class="font-bold text-lg mb-4 text-slate-700">Daftar Produk</h3>
-        <div class="grid grid-cols-2 gap-4" id="productGrid">
+    <div class="px-6 mt-10 pb-32">
+        <h3 class="font-bold text-lg mb-4">Daftar Produk</h3>
+        <div class="grid grid-cols-2 gap-4">
             
-            <div class="bg-white p-3 rounded-2xl shadow-md border border-gray-100">
-                <img src="https://via.placeholder.com/150" alt="Produk" class="w-full h-32 object-cover rounded-xl mb-3">
+            <div onclick="bukaDetail('Akun Premium', 'Akses VIP 30 hari, tanpa iklan, dan fitur unlock semua konten.', '50.000')" 
+                 class="bg-zinc-900 p-3 rounded-3xl border border-zinc-800 cursor-pointer active:scale-95 transition-all">
+                <div class="w-full h-32 bg-zinc-800 rounded-2xl mb-3 flex items-center justify-center">
+                    <i class="fas fa-gem text-3xl text-green-500"></i>
+                </div>
                 <h4 class="font-bold text-sm">Akun Premium</h4>
-                <p class="text-green-600 font-bold text-sm">Rp 50.000</p>
-                <button class="w-full mt-2 py-2 bg-green-100 text-green-700 rounded-lg text-xs font-bold uppercase">Beli</button>
+                <p class="text-green-500 font-bold text-xs mt-1">Rp 50.000</p>
+                <button class="w-full mt-3 py-2 bg-green-600/10 text-green-500 border border-green-600/20 rounded-xl text-[10px] font-bold">DETAIL</button>
             </div>
 
-            <div class="bg-white p-3 rounded-2xl shadow-md border border-gray-100">
-                <img src="https://via.placeholder.com/150" alt="Produk" class="w-full h-32 object-cover rounded-xl mb-3">
+            <div onclick="bukaDetail('Top Up Game', 'Top up instan 24 jam. Masukkan ID dan produk langsung masuk.', '100.000')" 
+                 class="bg-zinc-900 p-3 rounded-3xl border border-zinc-800 cursor-pointer active:scale-95 transition-all">
+                <div class="w-full h-32 bg-zinc-800 rounded-2xl mb-3 flex items-center justify-center">
+                    <i class="fas fa-gamepad text-3xl text-green-500"></i>
+                </div>
                 <h4 class="font-bold text-sm">Top Up Game</h4>
-                <p class="text-green-600 font-bold text-sm">Rp 100.000</p>
-                <button class="w-full mt-2 py-2 bg-green-100 text-green-700 rounded-lg text-xs font-bold uppercase">Beli</button>
+                <p class="text-green-500 font-bold text-xs mt-1">Rp 100.000</p>
+                <button class="w-full mt-3 py-2 bg-green-600/10 text-green-500 border border-green-600/20 rounded-xl text-[10px] font-bold">DETAIL</button>
             </div>
 
         </div>
     </div>
 
-    <div class="fixed bottom-5 left-0 right-0 px-6">
-        <button class="w-full py-4 bg-white border-2 border-green-600 text-green-600 rounded-2xl font-bold flex justify-center items-center gap-2 shadow-lg">
+    <div id="pop-up" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-6">
+        <div class="bg-zinc-900 w-full max-w-xs rounded-[30px] p-6 border border-zinc-800 shadow-2xl">
+            <h3 id="pop-judul" class="text-xl font-bold text-green-500 mb-2">Judul</h3>
+            <p id="pop-deskripsi" class="text-gray-400 text-sm mb-6 leading-relaxed">Deskripsi...</p>
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-gray-500">Harga</span>
+                <span id="pop-harga" class="text-lg font-bold text-white">Rp 0</span>
+            </div>
+            <button onclick="tutupDetail()" class="w-full py-3 bg-green-600 text-white rounded-2xl font-bold mb-2">BELI VIA WA</button>
+            <button onclick="tutupDetail()" class="w-full py-2 text-gray-500 text-xs">Kembali</button>
+        </div>
+    </div>
+
+    <div class="fixed bottom-6 left-0 right-0 px-6">
+        <button class="w-full py-4 bg-black border-2 border-green-500 text-green-500 rounded-2xl font-bold flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
             <i class="fas fa-handshake"></i> REKBER SEKARANG
         </button>
     </div>
 
     <script>
-        // Logika pencarian sederhana
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('keyup', (e) => {
-            let term = e.target.value.toLowerCase();
-            console.log("Mencari: " + term);
-            // Di sini kamu bisa tambahkan filter kartu produk nantinya
-        });
+        function bukaDetail(nama, teks, harga) {
+            document.getElementById('pop-judul').innerText = nama;
+            document.getElementById('pop-deskripsi').innerText = teks;
+            document.getElementById('pop-harga').innerText = 'Rp ' + harga;
+            document.getElementById('pop-up').classList.remove('hidden');
+        }
+
+        function tutupDetail() {
+            document.getElementById('pop-up').classList.add('hidden');
+        }
     </script>
 </body>
-      </html>
+</html>
