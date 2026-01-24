@@ -1,0 +1,37 @@
+[
+  {
+    "nama": "Netflix Premium",
+    "harga": "35.000",
+    "deskripsi": "<b>PAKET ULTRA HD!</b><br>Nonton kualitas 4K tanpa iklan. Akun privat/sharing, full garansi 30 hari.",
+    "gambar": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=400",
+    "wa": "628123456789"
+  },
+  {
+    "nama": "Robux 1000",
+    "harga": "125.000",
+    "deskripsi": "<b>TOP UP MURAH!</b><br>Proses cepat via login. Aman dari deactive, 100% legal roblox.",
+    "gambar": "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400",
+    "wa": "628111111111"
+  },
+  {
+    "nama": "Spotify Family",
+    "harga": "15.000",
+    "deskripsi": "<b>MUSIK TANPA BATAS!</b><br>Dengarkan musik kualitas tinggi tanpa iklan. Bisa download offline.",
+    "gambar": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=400",
+    "wa": "628222222222"
+  },
+  {
+    "nama": "Disney+ Hotstar",
+    "harga": "25.000",
+    "deskripsi": "<b>MARVEL & DISNEY!</b><br>Tonton film superhero favoritmu. Login mudah, garansi satu bulan penuh.",
+    "gambar": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?w=400",
+    "wa": "628333333333"
+  },
+  {
+    "nama": "YouTube Premium",
+    "harga": "10.000",
+    "deskripsi": "<b>NO ADS!</b><br>Nonton YouTube tanpa gangguan iklan. Bisa putar di latar belakang (background).",
+    "gambar": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400",
+    "wa": "628444444444"
+  }
+]
