@@ -25,11 +25,10 @@
         <div class="flex flex-col gap-8 font-bold">
             <a href="#" class="flex items-center gap-3"><i class="fas fa-phone text-green-500"></i> Kontak Kami</a>
             <div class="border-t border-zinc-800 pt-6">
-                <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest text-white">Sosmed Kami</p>
+                <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Sosmed Kami</p>
                 <div class="flex gap-6 text-3xl">
                     <a href="#" class="text-pink-500"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="text-white"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="text-blue-400"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -40,11 +39,11 @@
             <img src="https://via.placeholder.com/40" class="w-9 h-9 object-contain rounded-lg border border-zinc-700">
             <h1 class="text-xl font-bold text-green-500 uppercase tracking-tighter">Pasar Roblox</h1>
         </div>
-        <button onclick="toggleSidebar()" class="text-white p-2"><i class="fas fa-bars text-2xl"></i></button>
+        <button onclick="toggleSidebar()" class="text-white"><i class="fas fa-bars text-2xl"></i></button>
     </nav>
 
-    <div class="px-6 pt-6 text-white">
-        <div class="slider-container border border-zinc-700 shadow-2xl mb-8">
+    <div class="px-6 pt-6">
+        <div class="slider-container border border-zinc-700 shadow-2xl">
             <div class="slides" id="slider">
                 <div class="slide"><img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800"></div>
                 <div class="slide"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800"></div>
@@ -52,10 +51,9 @@
             </div>
         </div>
 
-        <div class="text-center">
+        <div class="text-center mt-8">
             <h2 class="text-3xl font-black uppercase leading-tight">Selamat Datang di <br> Pasar Roblox</h2>
             <h2 class="text-4xl font-black text-green-500 uppercase mt-2">Selamat Berbelanja</h2>
-            
             <div class="mt-4 flex justify-center">
                 <div class="bg-zinc-900 border border-yellow-500/30 px-4 py-1.5 rounded-full flex items-center gap-2">
                     <i class="fas fa-medal text-yellow-500 text-sm"></i>
@@ -67,46 +65,36 @@
 
     <div class="px-6 mt-10">
         <div class="relative max-w-md mx-auto mb-10">
-            <input type="text" id="searchInput" onkeyup="cariProduk()" placeholder="Cari produk impianmu..." class="w-full p-4 pl-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-green-500">
+            <input type="text" placeholder="Cari produk..." class="w-full p-4 pl-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-green-500">
             <i class="fas fa-search absolute left-5 top-5 text-gray-500"></i>
         </div>
 
-        <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><i class="fas fa-shopping-bag text-green-500"></i> Daftar Produk</h3>
-        
+        <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-white"><i class="fas fa-shopping-bag text-green-500"></i> Daftar Produk</h3>
         <div id="grid-produk" class="grid grid-cols-2 gap-4">
-            <p class="col-span-2 text-center text-gray-500 italic">Memuat produk...</p>
-        </div>
+            </div>
     </div>
 
-    <div class="px-6 mt-16 pb-44">
-        <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-white"><i class="fas fa-newspaper text-green-500"></i> Update Berita</h3>
-        <article class="bg-zinc-900 rounded-[2rem] overflow-hidden border border-zinc-800">
-            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600" class="w-full h-44 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Keamanan Transaksi</h4>
-                <p class="text-gray-400 text-sm">Semua produk digital di Pasar Roblox dijamin 100% legal dan bergaransi.</p>
+    <div class="px-6 mt-16 pb-44 text-white">
+        <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><i class="fas fa-newspaper text-green-500"></i> Update Berita</h3>
+        <div id="container-berita">
             </div>
-        </article>
     </div>
 
     <div id="popup" class="fixed inset-0 bg-black/95 hidden z-[100] flex items-end sm:items-center justify-center">
         <div class="bg-zinc-900 w-full max-w-md rounded-t-[3rem] p-8 border-t border-zinc-800 relative">
             <img id="pop-gambar" src="" class="w-full h-48 object-cover rounded-[2rem] mb-6">
-            <h3 id="pop-judul" class="text-2xl font-bold text-white mb-2">Judul</h3>
-            
+            <h3 id="pop-judul" class="text-2xl font-bold text-white mb-2"></h3>
             <div class="max-h-32 overflow-y-auto mb-6 pr-2 custom-scroll">
                 <p id="pop-deskripsi" class="text-gray-400 text-sm leading-relaxed text-justify"></p>
             </div>
-
-            <div class="flex justify-between items-center mb-6 bg-black/50 p-4 rounded-2xl">
-                <span class="text-gray-500 text-xs">Harga Produk</span>
-                <span id="pop-harga" class="text-xl font-bold text-green-500">Rp 0</span>
+            <div class="flex justify-between items-center mb-6 bg-black/50 p-4 rounded-2xl text-white">
+                <span class="text-gray-500">Harga</span>
+                <span id="pop-harga" class="text-xl font-bold text-green-500"></span>
             </div>
-
             <div class="grid gap-3">
                 <button onclick="bagikanProduk()" class="w-full py-3 bg-zinc-800 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 text-white"><i class="fas fa-share-alt"></i> BAGIKAN</button>
                 <div class="flex gap-2">
-                    <button onclick="tutupDetail()" class="flex-1 py-4 bg-zinc-700/30 rounded-2xl font-bold text-white">BATAL</button>
+                    <button onclick="tutupDetail()" class="flex-1 py-4 bg-zinc-700/50 rounded-2xl font-bold text-white">BATAL</button>
                     <a id="btn-wa" href="#" target="_blank" class="flex-[2] py-4 bg-green-600 rounded-2xl font-bold text-center text-white">BELI SEKARANG</a>
                 </div>
             </div>
@@ -115,13 +103,11 @@
 
     <a href="https://wa.me/628123456789" class="fixed bottom-24 right-6 z-50 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg animate-bounce text-white"><i class="fab fa-whatsapp text-3xl"></i></a>
     <div class="fixed bottom-6 left-0 right-0 px-6 z-40">
-        <button class="w-full py-4 bg-black border-2 border-green-500 text-green-500 rounded-2xl font-bold flex justify-center items-center gap-3">
-            <i class="fas fa-handshake"></i> REKBER SEKARANG
-        </button>
+        <button class="w-full py-4 bg-black border-2 border-green-500 text-green-500 rounded-2xl font-bold flex justify-center items-center gap-3"><i class="fas fa-handshake"></i> REKBER SEKARANG</button>
     </div>
 
     <script>
-        // SLIDER LOGIC
+        // Slider
         let currentSlide = 0;
         setInterval(() => {
             currentSlide = (currentSlide + 1) % 3;
@@ -130,26 +116,40 @@
 
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
 
-        // FETCH DATA DARI produk.json
+        // Muat Produk dari produk.json
         async function muatProduk() {
             try {
-                const response = await fetch('produk.json');
-                const products = await response.json();
-                const container = document.getElementById('grid-produk');
-                container.innerHTML = '';
+                const res = await fetch('produk.json');
+                const data = await res.json();
+                const grid = document.getElementById('grid-produk');
+                grid.innerHTML = data.map(p => `
+                    <div onclick="bukaDetail('${p.nama}', '${p.deskripsi}', '${p.harga}', '${p.gambar}', '${p.wa}')" 
+                         class="bg-zinc-900 p-3 rounded-[2rem] border border-zinc-800 active:scale-95 transition-all">
+                        <img src="${p.gambar}" class="w-full h-32 object-cover rounded-[1.5rem] mb-3">
+                        <h4 class="font-bold text-sm truncate px-1 text-white">${p.nama}</h4>
+                        <p class="text-green-500 font-bold text-xs mt-1 px-1">Rp ${p.harga}</p>
+                    </div>
+                `).join('');
+            } catch (e) { console.error("JSON Produk Error"); }
+        }
 
-                products.forEach(p => {
-                    container.innerHTML += `
-                        <div onclick="bukaDetail('${p.nama}', '${p.deskripsi}', '${p.harga}', '${p.gambar}', '${p.wa}')" 
-                             class="bg-zinc-900 p-3 rounded-[2rem] border border-zinc-800 active:scale-95 transition-all text-white">
-                            <img src="${p.gambar}" class="w-full h-32 object-cover rounded-[1.5rem] mb-3">
-                            <h4 class="font-bold text-sm truncate px-1">${p.nama}</h4>
-                            <p class="text-green-500 font-bold text-xs mt-1 px-1">Rp ${p.harga}</p>
-                        </div>`;
-                });
-            } catch (err) {
-                document.getElementById('grid-produk').innerHTML = '<p class="col-span-2 text-center text-red-500">Gagal memuat produk.json</p>';
-            }
+        // Muat Berita dari berita.json
+        async function muatBerita() {
+            try {
+                const res = await fetch('berita.json');
+                const data = await res.json();
+                const container = document.getElementById('container-berita');
+                container.innerHTML = data.map(b => `
+                    <article class="bg-zinc-900 rounded-[2rem] overflow-hidden border border-zinc-800 mb-6">
+                        <img src="${b.gambar}" class="w-full h-44 object-cover">
+                        <div class="p-6">
+                            <div class="text-[10px] text-gray-500 mb-2 font-bold uppercase tracking-widest">${b.tanggal}</div>
+                            <h4 class="text-xl font-bold mb-3 leading-tight text-white">${b.judul}</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">${b.isi}</p>
+                        </div>
+                    </article>
+                `).join('');
+            } catch (e) { console.error("JSON Berita Error"); }
         }
 
         function bukaDetail(nama, deskripsi, harga, img, wa) {
@@ -157,25 +157,21 @@
             document.getElementById('pop-deskripsi').innerHTML = deskripsi;
             document.getElementById('pop-harga').innerText = 'Rp ' + harga;
             document.getElementById('pop-gambar').src = img;
-            const msg = `Halo Pasar Roblox, saya mau beli *${nama}* seharga *Rp ${harga}*`;
-            document.getElementById('btn-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`;
+            const pesan = `Halo, saya mau beli *${nama}* seharga *Rp ${harga}*`;
+            document.getElementById('btn-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`;
             document.getElementById('popup').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
         }
 
-        function tutupDetail() {
-            document.getElementById('popup').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+        function tutupDetail() { document.getElementById('popup').classList.add('hidden'); }
 
         function bagikanProduk() {
-            const judul = document.getElementById('pop-judul').innerText;
-            const text = `Cek ${judul} di Pasar Roblox! ${window.location.href}`;
-            if (navigator.share) { navigator.share({ title: judul, text: text, url: window.location.href }); }
-            else { navigator.clipboard.writeText(text); alert("Link disalin!"); }
+            const text = `Cek produk ${document.getElementById('pop-judul').innerText} di Pasar Roblox!`;
+            if (navigator.share) { navigator.share({ title: 'Pasar Roblox', text: text, url: window.location.href }); }
+            else { navigator.clipboard.writeText(text); alert("Disalin!"); }
         }
 
         muatProduk();
+        muatBerita();
     </script>
 </body>
 </html>
