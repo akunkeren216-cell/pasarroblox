@@ -3,204 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASAR ROBLOX - Official Store</title>
-   
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/akunkeren216-cell/pasarroblox/refs/heads/main/masr.png">
-   
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Mas R Grup - Link</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: white; overflow-x: hidden; }
-        .sidebar { transition: 0.4s; transform: translateX(100%); }
-        .sidebar.active { transform: translateX(0); }
-        .slider-container { position: relative; overflow: hidden; border-radius: 2rem; aspect-ratio: 16/9; }
-        .slides { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
-        .slide { min-width: 100%; height: 100%; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
-        .custom-scroll::-webkit-scrollbar { width: 4px; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
+        :root {
+            --bg-dark: #000000;
+            --accent-green: #00ff41; /* Hijau Matrix/Gaming */
+            --dark-grey: #1a1a1a;
+            --text-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            /* Gradient latar belakang hitam ke hijau gelap di pojok */
+            background: radial-gradient(circle at top right, #003310, #000000);
+            color: var(--text-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding-top: 50px;
+        }
+
+        /* Profil Section */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-green);
+            background-color: var(--dark-grey);
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .username {
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        /* Tombol Link */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-card {
+            background-color: var(--dark-grey);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        /* Efek Hover */
+        .link-card:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: #555;
+        }
     </style>
 </head>
-<body class="font-sans">
+<body>
 
-    <div id="sidebar" class="sidebar fixed top-0 right-0 h-full w-72 bg-zinc-900 z-[70] p-8 shadow-2xl border-l border-zinc-800">
-        <button onclick="toggleSidebar()" class="mb-10 text-gray-400"><i class="fas fa-times text-3xl"></i></button>
-        <div class="flex flex-col gap-8 font-bold text-white">
-            <a href="#" class="flex items-center gap-3"><i class="fas fa-phone text-green-500"></i> Kontak Kami</a>
-            <div class="border-t border-zinc-800 pt-6">
-                <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Sosmed Kami</p>
-                <div class="flex gap-6 text-3xl">
-                    <a href="#" class="text-pink-500"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
+    <div class="container">
+        <img src="https://via.placeholder.com/100" alt="Logo" class="profile-img">
+        
+        <h1>MAS R GRUP</h1>
+        <span class="username">@mbjebe</span>
+
+        <p class="description">
+            HAY GAYS JANGAN LUPA GABUNG GRUP WA JEBE KITA YA, 
+            ATAU BELI PRODUK DIGITAL KITA GAYS 🚀🥰
+        </p>
+
+        <div class="links-container">
+            <a href="https://wa.me/link-kamu" class="link-card">GC WA PASAR ROBLOX INDONESIA</a>
+            <a href="https://wa.me/link-kamu" class="link-card">GC WA MARKET ROBLOX 🇮🇩🇲🇾</a>
+            <a href="https://wa.me/link-kamu" class="link-card">GC WA TRADE ITEM ROBLOX</a>
         </div>
     </div>
 
-    <nav class="flex justify-between items-center p-5 bg-zinc-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
-        <div class="flex items-center gap-3">
-            <img src="https://i.imghippo.com/files/N1814F.jpg" class="w-9 h-9 object-contain rounded-lg border border-zinc-700">
-            <h1 class="text-xl font-bold text-green-500 uppercase tracking-tighter">Pasar Roblox</h1>
-        </div>
-        <button onclick="toggleSidebar()" class="text-white"><i class="fas fa-bars text-2xl"></i></button>
-    </nav>
-
-    <div class="px-6 pt-6">
-        <div class="slider-container border border-zinc-700 shadow-2xl mb-8">
-            <div class="slides" id="slider">
-                <div class="slide"><img src="https://files.catbox.moe/th7jms.jpg"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800"></div>
-                <div class="slide"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800"></div>
-            </div>
-        </div>
-
-        <div class="text-center">
-            <h2 class="text-3xl font-black uppercase leading-tight">Selamat Datang di <br> Pasar Roblox</h2>
-            <h2 class="text-4xl font-black text-green-500 uppercase mt-2">Selamat Berbelanja</h2>
-            <div class="mt-4 flex justify-center">
-                <div class="bg-zinc-900 border border-yellow-500/30 px-4 py-1.5 rounded-full flex items-center gap-2">
-                    <i class="fas fa-medal text-yellow-500 text-sm"></i>
-                    <span class="text-[11px] font-black uppercase tracking-widest text-yellow-500">Paling Laris</span>
-                </div>
-            </div>
-        </div>
+    <div class="footer">
+        made with ❤️ by Mas R Grup
     </div>
 
-    <div class="px-6 mt-10">
-        <div class="relative max-w-md mx-auto mb-10">
-            <input type="text" placeholder="Cari produk..." class="w-full p-4 pl-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none">
-            <i class="fas fa-search absolute left-5 top-5 text-gray-500"></i>
-        </div>
-
-        <h3 class="font-bold text-lg mb-6 flex items-center gap-2 text-white"><i class="fas fa-shopping-bag text-green-500"></i> Daftar Produk</h3>
-        <div id="grid-produk" class="grid grid-cols-2 gap-4"></div>
-    </div>
-
-    <div class="px-6 mt-16 text-white">
-        <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><i class="fas fa-newspaper text-green-500"></i> Update Berita</h3>
-        <div id="container-berita"></div>
-    </div>
-
-    <div class="px-6 mt-16 pb-44 text-white">
-        <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><i class="fas fa-building text-green-500"></i> Profil Perusahaan</h3>
-        <div id="container-profil" class="bg-green-600 rounded-[2.5rem] p-8 text-white shadow-xl border border-green-400">
-            <p class="text-center italic">Memuat profil...</p>
-        </div>
-    </div>
-
-    <div id="popup" class="fixed inset-0 bg-black/95 hidden z-[100] flex items-end sm:items-center justify-center">
-        <div class="bg-zinc-900 w-full max-w-md rounded-t-[3rem] p-8 border-t border-zinc-800 relative">
-            <img id="pop-gambar" src="" class="w-full h-48 object-cover rounded-[2rem] mb-6">
-            <h3 id="pop-judul" class="text-2xl font-bold text-white mb-2"></h3>
-            <div class="max-h-32 overflow-y-auto mb-6 pr-2 custom-scroll">
-                <p id="pop-deskripsi" class="text-gray-400 text-sm leading-relaxed text-justify"></p>
-            </div>
-            <div class="flex justify-between items-center mb-6 bg-black/50 p-4 rounded-2xl text-white">
-                <span class="text-gray-500">Harga</span>
-                <span id="pop-harga" class="text-xl font-bold text-green-500"></span>
-            </div>
-            <div class="grid gap-3">
-                <button onclick="bagikanProduk()" class="w-full py-3 bg-zinc-800 rounded-2xl font-bold text-sm text-white flex items-center justify-center gap-2"><i class="fas fa-share-alt"></i> BAGIKAN</button>
-                <div class="flex gap-2">
-                    <button onclick="tutupDetail()" class="flex-1 py-4 bg-zinc-700/50 rounded-2xl font-bold text-white text-sm">BATAL</button>
-                    <a id="btn-wa" href="#" target="_blank" class="flex-[2] py-4 bg-green-600 rounded-2xl font-bold text-center text-white text-sm">BELI SEKARANG</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <a href="https://wa.me/628123456789" class="fixed bottom-24 right-6 z-50 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-white"><i class="fab fa-whatsapp text-3xl"></i></a>
-    <div class="fixed bottom-6 left-0 right-0 px-6 z-40">
-        <a href="https://wa.me/628123456789?text=Halo%20Admin,%20saya%20ingin%20menggunakan%20jasa%20Rekber" 
-           class="w-full py-4 bg-black border-2 border-green-500 text-green-500 rounded-2xl font-bold flex justify-center items-center gap-3 shadow-xl">
-            <i class="fas fa-handshake"></i> REKBER SEKARANG
-        </a>
-    </div>
-
-    <script>
-        // Toggle Sidebar
-        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
-
-        // Slider
-        let currentSlide = 0;
-        setInterval(() => {
-            const slider = document.getElementById('slider');
-            if(slider) {
-                currentSlide = (currentSlide + 1) % 3;
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-        }, 4000);
-
-        // Load Produk
-        async function muatProduk() {
-            try {
-                const res = await fetch('produk.json');
-                const data = await res.json();
-                document.getElementById('grid-produk').innerHTML = data.map(p => `
-                    <div onclick="bukaDetail('${p.nama}', '${p.deskripsi}', '${p.harga}', '${p.gambar}', '${p.wa}')" 
-                         class="bg-zinc-900 p-3 rounded-[2rem] border border-zinc-800 active:scale-95 transition-all">
-                        <img src="${p.gambar}" class="w-full h-32 object-cover rounded-[1.5rem] mb-3">
-                        <h4 class="font-bold text-sm truncate px-1 text-white">${p.nama}</h4>
-                        <p class="text-green-500 font-bold text-xs mt-1 px-1">Rp ${p.harga}</p>
-                    </div>`).join('');
-            } catch (e) { console.error("Gagal muat produk.json"); }
-        }
-
-        // Load Berita
-        async function muatBerita() {
-            try {
-                const res = await fetch('berita.json');
-                const data = await res.json();
-                document.getElementById('container-berita').innerHTML = data.map(b => `
-                    <article class="bg-zinc-900 rounded-[2rem] overflow-hidden border border-zinc-800 mb-6">
-                        <img src="${b.gambar}" class="w-full h-44 object-cover">
-                        <div class="p-6">
-                            <div class="text-[10px] text-gray-500 mb-2 font-bold uppercase tracking-widest">${b.tanggal}</div>
-                            <h4 class="text-xl font-bold mb-3 leading-tight text-white">${b.judul}</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">${b.isi}</p>
-                        </div>
-                    </article>`).join('');
-            } catch (e) { console.error("Gagal muat berita.json"); }
-        }
-
-        // Load Profil
-        async function muatProfil() {
-            try {
-                const res = await fetch('profil.json');
-                const p = await res.json();
-                document.getElementById('container-profil').innerHTML = `
-                    <div class="flex flex-col items-center text-center">
-                        <img src="${p.logo}" class="w-20 h-20 rounded-full border-4 border-white/30 mb-4 object-cover">
-                        <h4 class="text-2xl font-black uppercase mb-2">${p.nama_perusahaan}</h4>
-                        <p class="text-sm font-medium leading-relaxed opacity-90">${p.deskripsi}</p>
-                        <div class="w-full h-[1px] bg-white/20 my-4"></div>
-                        <p class="text-xs font-bold uppercase tracking-widest opacity-80">Visi: ${p.visi}</p>
-                    </div>`;
-            } catch (e) { console.error("Gagal muat profil.json"); }
-        }
-
-        function bukaDetail(nama, deskripsi, harga, img, wa) {
-            document.getElementById('pop-judul').innerText = nama;
-            document.getElementById('pop-deskripsi').innerHTML = deskripsi;
-            document.getElementById('pop-harga').innerText = 'Rp ' + harga;
-            document.getElementById('pop-gambar').src = img;
-            const pesan = `Halo Pasar Roblox, saya mau beli *${nama}* seharga *Rp ${harga}*`;
-            document.getElementById('btn-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`;
-            document.getElementById('popup').classList.remove('hidden');
-        }
-
-        function tutupDetail() { document.getElementById('popup').classList.add('hidden'); }
-
-        function bagikanProduk() {
-            const text = `Cek ${document.getElementById('pop-judul').innerText} di Pasar Roblox!`;
-            if (navigator.share) { navigator.share({ title: 'Pasar Roblox', text: text, url: window.location.href }); }
-            else { navigator.clipboard.writeText(text); alert("Link disalin!"); }
-        }
-
-        // Jalankan semua fungsi
-        muatProduk();
-        muatBerita();
-        muatProfil();
-    </script>
 </body>
-                        </html>
+</html>
