@@ -525,6 +525,9 @@ async function loadPromoFromSheets() {
         const rows = data.split('\n').slice(1); 
 
         // Pastikan script HANYA mengisi bagian grid di halaman promo
+        // Baris ini adalah "Kunci Kontak" agar script Google Sheets berjalan otomatis
+document.addEventListener('DOMContentLoaded', loadPromoFromSheets);
+        
         const container = document.querySelector('#page-promo .game-grid');
         
         if (container) {
