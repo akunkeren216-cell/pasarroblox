@@ -12,7 +12,34 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background: #f8f9fa; color: #333; padding-bottom: 100px; }
         .hidden { display: none !important; }
+.rekber-container {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #ffffff33;
+}
 
+.rekber-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Efek Kelap-Kelip (Glow & Pulse) */
+.animate-glow {
+    animation: rekberPulse 2s infinite;
+}
+
+@keyframes rekberPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
         /* --- HEADER --- */
         header { background: white; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .logo { font-weight: 900; color: var(--primary); font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
@@ -84,7 +111,55 @@
         <div class="page">
             <h3 style="margin-bottom: 15px;">🔥 Produk Unggulan</h3>
             <div class="game-grid" id="main-game-list"></div>
+        <div style="margin-top: 30px; padding: 0 10px;">
+    
+    <div style="background: white; padding: 20px; border-radius: 15px; border-left: 5px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px;">
+        <h4 style="margin-bottom: 8px; color: var(--primary);">📝 Tentang PASAR ROBLOX</h4>
+        <p style="font-size: 0.8rem; line-height: 1.5; color: #666;">
+            Selamat datang di <b>PASAR ROBLOX</b>. Kami adalah penyedia layanan Top Up Game, Jasa JPM, dan Provider Bot WhatsApp terpercaya. Transaksi aman dan proses kilat.
+        </p>
+    </div>
+
+    <h4 style="margin-bottom: 15px;">⭐ Testimoni Pelanggan</h4>
+    <div style="display: flex; overflow-x: auto; gap: 15px; padding-bottom: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Bot-nya fast respon banget, fitur lengkap & murah!"</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- @Player_Roblox</small>
         </div>
+
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Baru pertama kali beli JPM, langsung diproses admin."</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- Mas R Player</small>
+        </div>
+
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Amanah 100%, jangan ragu belanja di sini!"</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- Gamers Sejati</small>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding: 20px 0; border-top: 1px solid #eee;">
+        <p style="font-size: 0.8rem; font-weight: bold; color: #888; margin-bottom: 15px;">HUBUNGI KAMI DI:</p>
+        <div style="display: flex; justify-content: center; gap: 25px; font-size: 1.5rem;">
+            <a href="#" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: #000000;"><i class="fab fa-tiktok"></i></a>
+            <a href="#" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/6281234567890" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="font-size: 0.7rem; color: #bbb; margin-top: 20px;">&copy; 2026 PASAR ROBLOX Store</p>
+    </div>
+</div>
     </main>
 
     <main id="page-nokos" class="page hidden">
@@ -102,8 +177,100 @@
             </div>
         </div>
         <button class="btn-confirm" onclick="addToCart()">Lanjutkan Pesanan</button>
-    </main>
+    <div style="margin-top: 25px; padding: 15px; background: #fff; border-top: 1px solid #eee;">
+    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+        <img src="https://i.ibb.co.com/mR70FqG/icon-app.png" style="width: 60px; height: 60px; border-radius: 12px;" alt="App Icon">
+        <div>
+            <h2 style="font-size: 1.1rem; margin: 0; font-weight: 500; color: #202124;">Dola: Sebelumnya Cici</h2>
+            <p style="font-size: 0.8rem; color: #01875f; font-weight: 500; margin: 2px 0;">SPRING (SG) PTE. LTD.</p>
+        </div>
+    </div>
 
+    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; border-bottom: 1px solid #e8eaed; padding-bottom: 15px; margin-bottom: 15px;">
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.9rem;">4,3 <i class="fas fa-star" style="font-size: 0.7rem;"></i></div>
+            <div style="font-size: 0.7rem; color: #5f6368;">380 rb ulasan</div>
+        </div>
+        <div style="width: 1px; height: 20px; background: #e8eaed;"></div>
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.7rem; border: 1px solid #5f6368; display: inline-block; padding: 0 4px; border-radius: 2px;">IARC 12+</div>
+            <div style="font-size: 0.7rem; color: #5f6368; margin-top: 2px;">Rating 12+</div>
+        </div>
+        <div style="width: 1px; height: 20px; background: #e8eaed;"></div>
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.9rem;">100 jt+</div>
+            <div style="font-size: 0.7rem; color: #5f6368;">Download</div>
+        </div>
+    </div>
+
+    <a href="https://LINK_TUJUAN_KAMU.com" target="_blank" style="text-decoration: none; display: block;">
+        <button style="width: 100%; background: #01875f; color: white; border: none; padding: 10px; border-radius: 25px; font-weight: 500; font-size: 0.9rem; margin-bottom: 20px; cursor: pointer;">
+            Instal
+        </button>
+    </a>
+
+    <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 1">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 2">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 3">
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+        <span style="font-size: 0.9rem; font-weight: 500;">Tentang aplikasi ini</span>
+        <i class="fas fa-arrow-right" style="color: #5f6368; font-size: 0.8rem;"></i>
+    </div>
+    <p style="font-size: 0.8rem; color: #5f6368; margin-top: 8px; line-height: 1.4;">
+        Asisten AI andalanmu untuk bekerja, belajar, dan berkreasi.
+    </p>
+</div>
+    </main>
+<main id="page-promo" class="page hidden">
+    <div class="banner-container">
+        <div class="banner-wrapper">
+            <div class="banner-track" id="promoBannerTrack">
+                <img src="https://image2url.com/r2/default/images/1771501486399-802485da-7927-4662-bd1e-845390ccc424.jpg">
+                <img src="https://image2url.com/r2/default/images/1771501571555-a6078f47-61e0-4780-b79e-1fb01d620000.jpg">
+                <img src="https://image2url.com/r2/default/images/1771502261299-376b9d29-8a2c-4d6c-94fd-520ec9c0bb60.jpg">
+            </div>
+        </div>
+    <div style="padding: 0 15px; margin-bottom: 20px;">
+    <a href="https://wa.me/6281234567890" target="_blank" style="text-decoration: none;">
+        <div class="rekber-container animate-glow">
+            <div class="rekber-content">
+                <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span style="font-weight: bold; font-size: 1rem;">Rekber Mas R</span>
+                    <span style="font-size: 0.7rem; opacity: 0.9;">Terpercaya & Aman ✅</span>
+                </div>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </a>
+</div>
+
+    <div id="page-promo" class="page">
+    <h3 style="margin-bottom: 15px;">🔥 Promo Spesial Hari Ini</h3>
+    <div class="game-grid">
+        </div>
+</div>
+</main>
+
+<div id="promo-detail-sheet" class="bottom-sheet">
+    <div style="text-align: center;">
+        <img id="promo-detail-img" src="" style="width: 100%; border-radius: 15px; margin-bottom: 15px;">
+        <h3 id="promo-detail-title"></h3>
+        <p id="promo-detail-desc" style="font-size: 0.85rem; color: #666; margin: 10px 0 20px; line-height: 1.5;"></p>
+        
+        <a id="promo-wa-link" href="#" target="_blank" style="text-decoration: none;">
+            <button class="btn-confirm btn-wa">
+                <i class="fab fa-whatsapp"></i> Tanya Seller via WA
+            </button>
+        </a>
+    </div>
+</div>
+
+        </div>
+</main>
     <main id="page-cart" class="page hidden">
         <h3>🛒 Checkout Pesanan</h3>
         <div id="cart-box" class="menu-box" style="margin: 15px 0; padding: 20px;">
@@ -151,176 +318,12 @@
     </div>
 
     <div id="qris-modal" class="bottom-sheet">
-        <h3 style="text-align:center;">Scan QRIS Di Bawah</h3>
+        <h3 style="text-align:center;">Scan QRIS Di Bawah, Harap Bayar Sesuai Nominal</h3>
         <img src="https://image2url.com/r2/default/images/1771500211350-b6054fe5-ace8-4d0d-a5f7-6de988fe0b71.png" class="qris-img">
         <p style="text-align:center; font-weight:800; color:var(--primary); font-size: 1.2rem;" class="final-price"></p>
-        
+
         <div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 15px;">
             <label style="font-size:0.8rem; font-weight:700;">Upload Bukti Transfer:</label>
             <input type="file" id="bukti-file" class="input-file">
             <button class="btn-confirm btn-wa" onclick="finishOrder('QRIS')">KONFIRMASI PEMBAYARAN</button>
-        </div>
-    </div>
-
-    <nav class="nav-bar">
-        <div class="nav-item active" onclick="nav('home', this)"><i class="fas fa-home"></i>Home</div>
-        <div class="nav-item" onclick="nav('cart', this)"><i class="fas fa-shopping-cart"></i>Keranjang</div>
-        <div class="nav-item" onclick="nav('nokos', this)"><i class="fas fa-comment-dots"></i>Nokos</div>
-        <div class="nav-item" onclick="nav('profile', this)"><i class="fas fa-user"></i>Profil</div>
-    </nav>
-
-    <script>
-        // DATABASE GAMBAR & PRODUK (Ganti link banner untuk ganti gambar di home)
-        const db = {
-            "JPM PAKET HEMAT": {
-                banner: "https://via.placeholder.com/150/2b3990/ffffff?text=MLBB", 
-                items: [{q:"100 MEMBER", p:19500}, {q:"172 Diamonds", p:39000}, {q:"257 Diamonds", p:60000}]
-            },
-            "Free Fire": {
-                banner: "https://via.placeholder.com/150/ff4d4d/ffffff?text=FREE+FIRE",
-                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
-            },
-            "PUBG Mobile": {
-                banner: "https://via.placeholder.com/150/000000/ffffff?text=PUBGM",
-                items: [{q:"60 UC", p:15000}, {q:"325 UC", p:70000}]
-            },
-            "JPM SUPER KILAT": {
-                banner: "https://via.placeholder.com/150/ff4d4d/ffffff?text=FREE+FIRE",
-                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
-            },
-            "JPM DANA PELAJAR": {
-                banner: "https://via.placeholder.com/150/ff4d4d/ffffff?text=FREE+FIRE",
-                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
-            },
-            "JADI BOT": {
-                banner: "https://via.placeholder.com/150/ff4d4d/ffffff?text=FREE+FIRE",
-                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
-            },
-            "SEWA BOT": {
-                banner: "https://via.placeholder.com/150/ff4d4d/ffffff?text=FREE+FIRE",
-                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
-            }
-        };
-
-        let cart = {};
-        let historyData = [];
-        const noWA = "6281234567890"; // GANTI NOMOR WHATSAPP KAMU DI SINI
-
-        // INISIALISASI HOME
-        function init() {
-            document.getElementById('main-game-list').innerHTML = Object.keys(db).map(name => `
-                <div class="game-card" onclick="openSheet('${name}')">
-                    <img src="${db[name].banner}">
-                    <p>${name}</p>
-                </div>
-            `).join('');
-            startBanner();
-        }
-
-        // SLIDER LOGIC
-        function startBanner() {
-            let index = 0;
-            setInterval(() => {
-                index = (index + 1) % 3;
-                document.getElementById('bannerTrack').style.transform = `translateX(-${(index * 100) / 3}%)`;
-            }, 3000);
-        }
-
-        // SHEET & SELECTION
-        function openSheet(name) {
-            cart = { game: name };
-            document.getElementById('sheet-title').innerText = name;
-            document.getElementById('nominal-grid').innerHTML = db[name].items.map(i => `
-                <div class="game-card" onclick="selectNom('${i.q}', ${i.p}, this)">
-                    <b>${i.q}</b><br><span style="font-size:0.7rem">Rp ${i.p.toLocaleString('id-ID')}</span>
-                </div>
-            `).join('');
-            document.getElementById('sheet').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        }
-
-        function selectNom(q, p, el) {
-            document.querySelectorAll('#nominal-grid .game-card').forEach(c => c.classList.remove('selected'));
-            el.classList.add('selected');
-            cart.qty = q; cart.price = p;
-        }
-
-        function selectNokos(app, p, el) {
-            document.querySelectorAll('#page-nokos .game-card').forEach(c => c.classList.remove('selected'));
-            el.classList.add('selected');
-            cart = { game: "Nokos " + app, qty: "Layanan OTP", price: p, target: "System" };
-        }
-
-        function addToCart() {
-            if(!cart.qty) return alert("Pilih nominal terlebih dahulu!");
-            cart.target = document.getElementById('target-id').value || cart.target || "User";
-            document.getElementById('cart-box').innerHTML = `
-                <div style="border-left: 4px solid var(--primary); padding-left: 15px;">
-                    <b style="font-size:1.1rem">${cart.game}</b><br>
-                    <span>${cart.qty}</span><br>
-                    <small style="color:#888">ID: ${cart.target}</small><br>
-                    <b style="color:var(--primary)">Total: Rp ${cart.price.toLocaleString('id-ID')}</b>
-                </div>`;
-            document.querySelectorAll('.final-price').forEach(b => b.innerText = "Rp " + cart.price.toLocaleString('id-ID'));
-            document.getElementById('payment-section').classList.remove('hidden');
-            closeAll(); nav('cart', document.querySelectorAll('.nav-item')[1]);
-        }
-
-        // PAYMENT & WA
-        function openQrisModal() {
-            document.getElementById('qris-modal').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        }
-
-        function finishOrder(method) {
-            const text = `*PESANAN BARU - LAPAKGAMING*%0A%0A*Produk:* ${cart.game}%0A*Item:* ${cart.qty}%0A*ID Target:* ${cart.target}%0A*Metode:* ${method}%0A*Total:* Rp ${cart.price.toLocaleString('id-ID')}%0A%0A_Mohon diproses segera, Terima kasih!_`;
-            historyData.unshift({...cart, method: method, date: new Date().toLocaleTimeString()});
-            renderHistory();
-            window.open(`https://wa.me/${noWA}?text=${text}`, '_blank');
-            closeAll(); nav('profile', document.querySelectorAll('.nav-item')[3]);
-        }
-
-        function contactCS() {
-            window.open(`https://wa.me/${noWA}?text=Halo+Admin+CS+LapakGaming,+saya+butuh+bantuan...`, '_blank');
-        }
-
-        // HISTORY & AUTH
-        function renderHistory() {
-            const h = document.getElementById('order-history');
-            h.innerHTML = historyData.map(l => `
-                <div style="padding:12px 0; border-bottom:1px solid #eee;">
-                    <b>${l.game}</b> <span style="float:right; color:var(--primary)">Rp ${l.price.toLocaleString()}</span><br>
-                    <small>${l.date} | ${l.method}</small>
-                </div>`).join('');
-        }
-
-        function doLogin() {
-            const u = document.getElementById('usernameIn').value;
-            if(!u) return alert("Masukkan username!");
-            document.getElementById('displayUname').innerText = u;
-            document.getElementById('auth-screen').classList.add('hidden');
-            document.getElementById('account-screen').classList.remove('hidden');
-            document.getElementById('acc-btn').innerText = "Akun";
-        }
-
-        function doLogout() {
-            document.getElementById('auth-screen').classList.remove('hidden');
-            document.getElementById('account-screen').classList.add('hidden');
-            document.getElementById('acc-btn').innerText = "Masuk";
-        }
-
-        function nav(id, el) {
-            document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
-            document.getElementById('page-'+id).classList.remove('hidden');
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            el.classList.add('active');
-        }
-
-        function closeAll() {
-            document.querySelectorAll('.bottom-sheet, .overlay').forEach(el => el.classList.remove('active'));
-        }
-
-        init();
-    </script>
-</body>
-                </html>
+        <
