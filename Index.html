@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASAR ROBLOX - Official Full Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --primary: #2b3990; --secondary: #f3f4f6; --accent: #ff4d4d; --success: #25D366; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #f8f9fa; color: #333; padding-bottom: 100px; }
+        .hidden { display: none !important; }
+.rekber-container {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #ffffff33;
+}
+
+.rekber-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Efek Kelap-Kelip (Glow & Pulse) */
+.animate-glow {
+    animation: rekberPulse 2s infinite;
+}
+
+@keyframes rekberPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+        /* --- HEADER --- */
+        header { background: white; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo { font-weight: 900; color: var(--primary); font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+        .btn-top-acc { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
+
+        /* --- BANNER SLIDER --- */
+        .banner-container { padding: 15px; background: white; }
+        .banner-wrapper { width: 100%; overflow: hidden; border-radius: 15px; position: relative; }
+        .banner-track { display: flex; transition: 0.5s ease-in-out; width: 300%; }
+        .banner-track img { width: 100%; height: 160px; object-fit: cover; }
+
+        /* --- GRID UTAMA --- */
+        .page { padding: 15px; }
+        .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .game-card { background: white; border-radius: 15px; padding: 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03); cursor: pointer; border: 1.5px solid transparent; }
+        .game-card img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; margin-bottom: 8px; object-fit: cover; }
+        .game-card p { font-size: 0.7rem; font-weight: 700; }
+        .game-card.selected { border-color: var(--primary); background: #f0f4ff; }
+
+        /* --- FLOATING CS --- */
+        .fab-cs { position: fixed; bottom: 85px; right: 20px; width: 55px; height: 55px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 3000; cursor: pointer; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        /* --- UI COMPONENTS --- */
+        .bottom-sheet { position: fixed; bottom: 0; width: 100%; background: white; border-radius: 25px 25px 0 0; padding: 25px; z-index: 2000; box-shadow: 0 -5px 25px rgba(0,0,0,0.15); transform: translateY(100%); transition: 0.3s; max-height: 85vh; overflow-y: auto; }
+        .bottom-sheet.active { transform: translateY(0); }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1900; display: none; }
+        .overlay.active { display: block; }
+        
+        .menu-box { background: white; margin-bottom: 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        .menu-item { padding: 18px; border-bottom: 1px solid #f5f5f5; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+
+        /* --- BUTTONS & INPUTS --- */
+        .input-uid, .input-file { padding: 12px; border-radius: 10px; border: 1px solid #ddd; width: 100%; outline: none; margin: 10px 0; font-size: 0.9rem; }
+        .btn-confirm { width: 100%; background: var(--primary); color: white; padding: 16px; border: none; border-radius: 12px; font-weight: 800; margin-top: 10px; cursor: pointer; }
+        .btn-wa { background: var(--success); }
+        .qris-img { width: 220px; display: block; margin: 10px auto; border: 2px solid #eee; padding: 5px; border-radius: 10px; }
+
+        /* --- NAV --- */
+        .nav-bar { position: fixed; bottom: 0; width: 100%; background: white; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 1500; }
+        .nav-item { flex: 1; text-align: center; color: #999; font-size: 0.7rem; cursor: pointer; }
+        .nav-item.active { color: var(--primary); font-weight: 800; }
+        .nav-item i { font-size: 1.2rem; display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" class="overlay" onclick="closeAll()"></div>
+
+    <div class="fab-cs" onclick="contactCS()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <header>
+        <div class="logo"><i class="fas fa-bolt"></i> PASAR ROBLOX</div>
+        <div id="acc-btn" class="btn-top-acc" onclick="nav('profile', document.querySelectorAll('.nav-item')[3])">Masuk</div>
+    </header>
+
+    <main id="page-home">
+        <div class="banner-container">
+            <div class="banner-wrapper">
+                <div class="banner-track" id="bannerTrack">
+                    <img src="https://image2url.com/r2/default/images/1771501486399-802485da-7927-4662-bd1e-845390ccc424.jpg">
+                    <img src="https://image2url.com/r2/default/images/1771501571555-a6078f47-61e0-4780-b79e-1fb01d620000.jpg">
+                    <img src="https://image2url.com/r2/default/images/1771502261299-376b9d29-8a2c-4d6c-94fd-520ec9c0bb60.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <h3 style="margin-bottom: 15px;">🔥 Produk Unggulan</h3>
+            <div class="game-grid" id="main-game-list"></div>
+        <div style="margin-top: 30px; padding: 0 10px;">
+    
+    <div style="background: white; padding: 20px; border-radius: 15px; border-left: 5px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px;">
+        <h4 style="margin-bottom: 8px; color: var(--primary);">📝 Tentang PASAR ROBLOX</h4>
+        <p style="font-size: 0.8rem; line-height: 1.5; color: #666;">
+            Selamat datang di <b>PASAR ROBLOX</b>. Kami adalah penyedia layanan Top Up Game, Jasa JPM, dan Provider Bot WhatsApp terpercaya. Transaksi aman dan proses kilat.
+        </p>
+    </div>
+
+    <h4 style="margin-bottom: 15px;">⭐ Testimoni Pelanggan</h4>
+    <div style="display: flex; overflow-x: auto; gap: 15px; padding-bottom: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Bot-nya fast respon banget, fitur lengkap & murah!"</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- @Player_Roblox</small>
+        </div>
+
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Baru pertama kali beli JPM, langsung diproses admin."</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- Mas R Player</small>
+        </div>
+
+        <div style="min-width: 260px; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <div style="color: #f1c40f; font-size: 0.7rem; margin-bottom: 8px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p style="font-size: 0.75rem; color: #444; font-style: italic;">"Amanah 100%, jangan ragu belanja di sini!"</p>
+            <small style="display: block; margin-top: 10px; font-weight: bold; color: var(--primary);">- Gamers Sejati</small>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding: 20px 0; border-top: 1px solid #eee;">
+        <p style="font-size: 0.8rem; font-weight: bold; color: #888; margin-bottom: 15px;">HUBUNGI KAMI DI:</p>
+        <div style="display: flex; justify-content: center; gap: 25px; font-size: 1.5rem;">
+            <a href="#" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: #000000;"><i class="fab fa-tiktok"></i></a>
+            <a href="#" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/6281234567890" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="font-size: 0.7rem; color: #bbb; margin-top: 20px;">&copy; 2026 PASAR ROBLOX Store</p>
+    </div>
+</div>
+    </main>
+
+    <main id="page-nokos" class="page hidden">
+        <h3 style="margin-bottom: 20px;">📱 Layanan NOKOS (OTP)</h3>
+        <div class="game-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="game-card" onclick="selectNokos('WhatsApp', 10000, this)">
+                <i class="fab fa-whatsapp" style="font-size: 2.5rem; color: var(--success); margin-bottom: 10px; display: block;"></i>
+                <p>WhatsApp</p>
+                <b>Rp 4.000</b>
+            </div>
+            <div class="game-card" onclick="selectNokos('Telegram', 8000, this)">
+                <i class="fab fa-telegram" style="font-size: 2.5rem; color: #0088cc; margin-bottom: 10px; display: block;"></i>
+                <p>Telegram</p>
+                <b>Rp 8.000</b>
+            </div>
+        </div>
+        <button class="btn-confirm" onclick="addToCart()">Lanjutkan Pesanan</button>
+    <div style="margin-top: 25px; padding: 15px; background: #fff; border-top: 1px solid #eee;">
+    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+        <img src="https://i.ibb.co.com/mR70FqG/icon-app.png" style="width: 60px; height: 60px; border-radius: 12px;" alt="App Icon">
+        <div>
+            <h2 style="font-size: 1.1rem; margin: 0; font-weight: 500; color: #202124;">Dola: Sebelumnya Cici</h2>
+            <p style="font-size: 0.8rem; color: #01875f; font-weight: 500; margin: 2px 0;">SPRING (SG) PTE. LTD.</p>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; border-bottom: 1px solid #e8eaed; padding-bottom: 15px; margin-bottom: 15px;">
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.9rem;">4,3 <i class="fas fa-star" style="font-size: 0.7rem;"></i></div>
+            <div style="font-size: 0.7rem; color: #5f6368;">380 rb ulasan</div>
+        </div>
+        <div style="width: 1px; height: 20px; background: #e8eaed;"></div>
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.7rem; border: 1px solid #5f6368; display: inline-block; padding: 0 4px; border-radius: 2px;">IARC 12+</div>
+            <div style="font-size: 0.7rem; color: #5f6368; margin-top: 2px;">Rating 12+</div>
+        </div>
+        <div style="width: 1px; height: 20px; background: #e8eaed;"></div>
+        <div style="flex: 1;">
+            <div style="font-weight: 500; font-size: 0.9rem;">100 jt+</div>
+            <div style="font-size: 0.7rem; color: #5f6368;">Download</div>
+        </div>
+    </div>
+
+    <a href="https://LINK_TUJUAN_KAMU.com" target="_blank" style="text-decoration: none; display: block;">
+        <button style="width: 100%; background: #01875f; color: white; border: none; padding: 10px; border-radius: 25px; font-weight: 500; font-size: 0.9rem; margin-bottom: 20px; cursor: pointer;">
+            Instal
+        </button>
+    </a>
+
+    <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 1">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 2">
+        <img src="https://i.ibb.co.com/8mXQpW6/ss1.jpg" style="width: 130px; border-radius: 8px; border: 1px solid #e8eaed;" alt="Screen 3">
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+        <span style="font-size: 0.9rem; font-weight: 500;">Tentang aplikasi ini</span>
+        <i class="fas fa-arrow-right" style="color: #5f6368; font-size: 0.8rem;"></i>
+    </div>
+    <p style="font-size: 0.8rem; color: #5f6368; margin-top: 8px; line-height: 1.4;">
+        Asisten AI andalanmu untuk bekerja, belajar, dan berkreasi.
+    </p>
+</div>
+    </main>
+<main id="page-promo" class="page hidden">
+    <div class="banner-container">
+        <div class="banner-wrapper">
+            <div class="banner-track" id="promoBannerTrack">
+                <img src="https://image2url.com/r2/default/images/1771501486399-802485da-7927-4662-bd1e-845390ccc424.jpg">
+                <img src="https://image2url.com/r2/default/images/1771501571555-a6078f47-61e0-4780-b79e-1fb01d620000.jpg">
+                <img src="https://image2url.com/r2/default/images/1771502261299-376b9d29-8a2c-4d6c-94fd-520ec9c0bb60.jpg">
+            </div>
+        </div>
+    <div style="padding: 0 15px; margin-bottom: 20px;">
+    <a href="https://wa.me/6281234567890" target="_blank" style="text-decoration: none;">
+        <div class="rekber-container animate-glow">
+            <div class="rekber-content">
+                <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span style="font-weight: bold; font-size: 1rem;">Rekber Mas R</span>
+                    <span style="font-size: 0.7rem; opacity: 0.9;">Terpercaya & Aman ✅</span>
+                </div>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </a>
+</div>
+
+    <div id="page-promo" class="page">
+    <h3 style="margin-bottom: 15px;">🔥 Promo Spesial Hari Ini</h3>
+    <div class="game-grid">
+        </div>
+</div>
+</main>
+
+<div id="promo-detail-sheet" class="bottom-sheet">
+    <div style="text-align: center;">
+        <img id="promo-detail-img" src="" style="width: 100%; border-radius: 15px; margin-bottom: 15px;">
+        <h3 id="promo-detail-title"></h3>
+        <p id="promo-detail-desc" style="font-size: 0.85rem; color: #666; margin: 10px 0 20px; line-height: 1.5;"></p>
+        
+        <a id="promo-wa-link" href="#" target="_blank" style="text-decoration: none;">
+            <button class="btn-confirm btn-wa">
+                <i class="fab fa-whatsapp"></i> Tanya Seller via WA
+            </button>
+        </a>
+    </div>
+</div>
+
+        </div>
+</main>
+    <main id="page-cart" class="page hidden">
+        <h3>🛒 Checkout Pesanan</h3>
+        <div id="cart-box" class="menu-box" style="margin: 15px 0; padding: 20px;">
+            <p style="text-align: center; color: #999;">Keranjang Kosong</p>
+        </div>
+        
+        <div id="payment-section" class="hidden">
+            <p style="font-weight: 800; font-size: 0.7rem; color: #888; margin-bottom: 10px;">PILIH METODE PEMBAYARAN</p>
+            <div class="menu-item" style="background:white; border-radius:12px; margin-bottom:10px; border: 1px solid #eee;" onclick="openQrisModal()">
+                <span><i class="fas fa-qrcode" style="color:var(--primary)"></i> QRIS Otomatis</span>
+                <b class="final-price" style="color:var(--primary)"></b>
+            </div>
+            <button class="btn-confirm btn-wa" onclick="finishOrder('WhatsApp Direct')">KONFIRMASI VIA WHATSAPP</button>
+        </div>
+    </main>
+
+    <main id="page-profile" class="hidden">
+        <div id="auth-screen" style="padding: 60px 25px; text-align: center;">
+            <h2>Masuk Member</h2>
+            <input type="text" id="usernameIn" placeholder="Username" class="input-uid">
+            <button class="btn-confirm" onclick="doLogin()">MASUK SEKARANG</button>
+        </div>
+        
+        <div id="account-screen" class="hidden">
+            <div style="background:var(--primary); color:white; padding:40px 20px; text-align:center; border-radius:0 0 30px 30px;">
+                <div style="width:70px; height:70px; background:white; border-radius:50%; margin:0 auto 15px; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size: 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3 id="displayUname">User</h3>
+                <p style="font-size: 0.8rem; opacity: 0.8;">ID Member: LG-9921</p>
+            </div>
+            <div class="menu-box" style="margin:20px 15px;">
+                <div class="menu-item"><b><i class="fas fa-history"></i> Riwayat Pembelian</b></div>
+                <div id="order-history" style="padding: 15px; background: #fafafa; font-size: 0.85rem; min-height: 100px;">
+                    <p style="color:#999; text-align:center;">Belum ada riwayat transaksi.</p>
+                </div>
+                <div class="menu-item" style="color:red; border-top: 1px solid #eee" onclick="doLogout()"><span>Logout Akun</span><i class="fas fa-sign-out-alt"></i></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="sheet" class="bottom-sheet">
+        <h3 id="sheet-title">Pilih Produk</h3>
+        <input type="text" id="target-id" placeholder="Masukkan Link Grup / Link ps/Id" class="input-uid">
+        <div class="game-grid" id="nominal-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:15px;"></div>
+        <button class="btn-confirm" onclick="addToCart()">BELI SEKARANG</button>
+    </div>
+
+    <div id="qris-modal" class="bottom-sheet">
+        <h3 style="text-align:center;">Scan QRIS Di Bawah, Harap Bayar Sesuai Nominal</h3>
+        <img src="https://image2url.com/r2/default/images/1771500211350-b6054fe5-ace8-4d0d-a5f7-6de988fe0b71.png" class="qris-img">
+        <p style="text-align:center; font-weight:800; color:var(--primary); font-size: 1.2rem;" class="final-price"></p>
+
+        <div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 15px;">
+            <label style="font-size:0.8rem; font-weight:700;">Upload Bukti Transfer:</label>
+            <input type="file" id="bukti-file" class="input-file">
+            <button class="btn-confirm btn-wa" onclick="finishOrder('QRIS')">KONFIRMASI PEMBAYARAN</button>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="nav-item active" onclick="nav('home', this)"><i class="fas fa-home"></i>Home</div>
+        <div class="nav-item" onclick="nav('cart', this)"><i class="fas fa-shopping-cart"></i>Keranjang</div>
+        <div class="nav-item" onclick="nav('nokos', this)"><i class="fas fa-comment-dots"></i>Nokos</div>
+       <div class="nav-item" onclick="nav('promo', this)">
+    <i class="fas fa-fire"></i>
+    Promosi
+</div> 
+        <div class="nav-item" onclick="nav('profile', this)"><i class="fas fa-user"></i>Profil</div>
+    </nav>
+
+    <script>
+        // DATABASE GAMBAR & PRODUK (Ganti link banner untuk ganti gambar di home)
+        const db = {
+            "JPM PAKET HEMAT": {
+                banner: "https://image2url.com/r2/default/images/1771597503989-2a6288eb-2632-4045-ac24-bdd9a01c8d89.jpeg", 
+                items: [{q:"10 MEMBER", p:1500}, {q:"20 MEMBER", p:4500}, {q:"30 MEMBER", p:6000}, {q:"40 MEMBER", p:7500}, {q:"60 MEMBER", p:10500}, {q:"70 MEMBER", p:12500}, {q:"90 MEMBER", p:13500}, {q:"100 MEMBER", p:15000}]
+            },
+            "PANEL BOT WA MURAH": {
+                banner: "https://image2url.com/r2/default/images/1771607035310-ae1b5528-8bb7-44fb-8b52-cb99bb9ab4d3.jpeg",
+                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
+            },
+            "PANEL BOT WA GARANSI": {
+                banner: "https://image2url.com/r2/default/images/1771607035310-ae1b5528-8bb7-44fb-8b52-cb99bb9ab4d3.jpeg",
+                items: [{q:"60 UC", p:15000}, {q:"325 UC", p:70000}]
+            },
+            "JPM SUPER KILAT": {
+                banner: "https://image2url.com/r2/default/images/1771596990082-36b58678-9472-46ce-b56a-482d21c5f606.jpg",
+                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
+            },
+            "JPM DANA PELAJAR": {
+                banner: "https://image2url.com/r2/default/images/1771597174981-16f6feff-9af9-4f7b-8d6a-42719fb508a4.jpeg",
+                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
+            },
+            "JADI BOT": {
+                banner: "https://image2url.com/r2/default/images/1771597349763-f9dfacc7-db0b-40ae-a1cc-223cf86396a4.jpg",
+                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
+            },
+            "SEWA BOT": {
+                banner: "https://image2url.com/r2/default/images/1771597349763-f9dfacc7-db0b-40ae-a1cc-223cf86396a4.jpg",
+                items: [{q:"70 Diamonds", p:10000}, {q:"140 Diamonds", p:20000}, {q:"355 Diamonds", p:50000}]
+            }
+        };
+
+        let cart = {};
+        let historyData = [];
+        const noWA = "6281234567890"; // GANTI NOMOR WHATSAPP KAMU DI SINI
+
+        // INISIALISASI HOME
+        function init() {
+            document.getElementById('main-game-list').innerHTML = Object.keys(db).map(name => `
+                <div class="game-card" onclick="openSheet('${name}')">
+                    <img src="${db[name].banner}">
+                    <p>${name}</p>
+                </div>
+            `).join('');
+            startBanner();
+        }
+
+        // SLIDER LOGIC
+        function startBanner() {
+            let index = 0;
+            setInterval(() => {
+                index = (index + 1) % 3;
+                document.getElementById('bannerTrack').style.transform = `translateX(-${(index * 100) / 3}%)`;
+            }, 3000);
+        }
+
+        // SHEET & SELECTION
+        function openSheet(name) {
+            cart = { game: name };
+            document.getElementById('sheet-title').innerText = name;
+            document.getElementById('nominal-grid').innerHTML = db[name].items.map(i => `
+                <div class="game-card" onclick="selectNom('${i.q}', ${i.p}, this)">
+                    <b>${i.q}</b><br><span style="font-size:0.7rem">Rp ${i.p.toLocaleString('id-ID')}</span>
+                </div>
+            `).join('');
+            document.getElementById('sheet').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function selectNom(q, p, el) {
+            document.querySelectorAll('#nominal-grid .game-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            cart.qty = q; cart.price = p;
+        }
+
+        function selectNokos(app, p, el) {
+            document.querySelectorAll('#page-nokos .game-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            cart = { game: "Nokos " + app, qty: "Layanan OTP", price: p, target: "System" };
+        }
+
+        function addToCart() {
+            if(!cart.qty) return alert("Pilih nominal terlebih dahulu!");
+            cart.target = document.getElementById('target-id').value || cart.target || "User";
+            document.getElementById('cart-box').innerHTML = `
+                <div style="border-left: 4px solid var(--primary); padding-left: 15px;">
+                    <b style="font-size:1.1rem">${cart.game}</b><br>
+                    <span>${cart.qty}</span><br>
+                    <small style="color:#888">ID: ${cart.target}</small><br>
+                    <b style="color:var(--primary)">Total: Rp ${cart.price.toLocaleString('id-ID')}</b>
+                </div>`;
+            document.querySelectorAll('.final-price').forEach(b => b.innerText = "Rp " + cart.price.toLocaleString('id-ID'));
+            document.getElementById('payment-section').classList.remove('hidden');
+            closeAll(); nav('cart', document.querySelectorAll('.nav-item')[1]);
+        }
+
+        // PAYMENT & WA
+        function openQrisModal() {
+            document.getElementById('qris-modal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function finishOrder(method) {
+            const text = `*PESANAN BARU - PASAR ROBLOX*%0A%0A*Produk:* ${cart.game}%0A*Item:* ${cart.qty}%0A*ID Target:* ${cart.target}%0A*Metode:* ${method}%0A*Total:* Rp ${cart.price.toLocaleString('id-ID')}%0A%0A_Mohon diproses segera, Terima kasih!_`;
+            historyData.unshift({...cart, method: method, date: new Date().toLocaleTimeString()});
+            renderHistory();
+            window.open(`https://wa.me/${noWA}?text=${text}`, '_blank');
+            closeAll(); nav('profile', document.querySelectorAll('.nav-item')[3]);
+        }
+
+        function contactCS() {
+            window.open(`https://wa.me/${noWA}?text=Halo+Admin+CS+PASAR ROBLOX,+saya+butuh+bantuan...`, '_blank');
+        }
+// --- LOGIKA POPUP PEMBELIAN OTOMATIS ---
+const fakePurchases = [
+    { name: "Andi", item: "JPM Super Kilat" },
+    { name: "Siska", item: "Sewa Bot WA" },
+    { name: "Budi", item: "Panel Bot Murah" },
+    { name: "Rian", item: "JPM Paket Hemat" },
+    { name: "Zidan", item: "Jadi Bot" }
+];
+
+function showNotification() {
+    const notif = document.getElementById('buy-notification');
+    const text = document.getElementById('notif-text');
+    if(!notif || !text) return;
+
+    const randomBuy = fakePurchases[Math.floor(Math.random() * fakePurchases.length)];
+    text.innerHTML = `${randomBuy.name} berhasil membeli <br> <span style="color:var(--primary)">${randomBuy.item}</span>`;
+    
+    notif.style.left = "20px"; // Munculkan
+    setTimeout(() => {
+        notif.style.left = "-300px"; // Sembunyikan setelah 5 detik
+    }, 5000);
+}
+
+// Jalankan popup setiap 20 detik
+setInterval(showNotification, 20000);
+// Jalankan pertama kali saat web dibuka
+setTimeout(showNotification, 3000);
+        // HISTORY & AUTH
+        function renderHistory() {
+            const h = document.getElementById('order-history');
+            h.innerHTML = historyData.map(l => `
+                <div style="padding:12px 0; border-bottom:1px solid #eee;">
+                    <b>${l.game}</b> <span style="float:right; color:var(--primary)">Rp ${l.price.toLocaleString()}</span><br>
+                    <small>${l.date} | ${l.method}</small>
+                </div>`).join('');
+        }
+
+        function doLogin() {
+            const u = document.getElementById('usernameIn').value;
+            if(!u) return alert("Masukkan username!");
+            document.getElementById('displayUname').innerText = u;
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('account-screen').classList.remove('hidden');
+            document.getElementById('acc-btn').innerText = "Akun";
+        }
+
+        function doLogout() {
+            document.getElementById('auth-screen').classList.remove('hidden');
+            document.getElementById('account-screen').classList.add('hidden');
+            document.getElementById('acc-btn').innerText = "Masuk";
+        }
+
+        function nav(id, el) {
+            document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
+            document.getElementById('page-'+id).classList.remove('hidden');
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function closeAll() {
+            document.querySelectorAll('.bottom-sheet, .overlay').forEach(el => el.classList.remove('active'));
+        }
+async function loadPromoFromSheets() {
+    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSfWRV3fQYA6Tfo0bUn8uqylddRu8eJNl2TXx_WXId005Z9574qlX-OZCH-MWGCU4etuX5TS23OrcmU/pub?output=csv'; 
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.text();
+        const rows = data.split('\n').slice(1); 
+
+        // Pastikan script HANYA mengisi bagian grid di halaman promo
+        const container = document.querySelector('#page-promo .game-grid');
+        
+        if (container) {
+            container.innerHTML = ''; // Bersihkan isi sebelumnya
+
+            rows.forEach(row => {
+                // Memisahkan kolom (Nama, Gambar, Deskripsi, Harga, NoWA)
+                const columns = row.split(',');
+                
+                if (columns.length >= 5) {
+                    const nama = columns[0].trim();
+                    const gambar = columns[1].trim();
+                    const deskripsi = columns[2].trim();
+                    const harga = columns[3].trim();
+                    const nomorWA = columns[4].trim();
+                    
+                    const cardHTML = `
+                        <div class="game-card" onclick="viewPromoDetail('${nama}', '${gambar}', '${deskripsi}', '${harga}', '${nomorWA}')">
+                            <img src="${gambar}" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 8px;">
+                            <p style="font-weight: bold; margin-bottom: 4px;">${nama}</p>
+                            <small style="color: #25d366; font-weight: bold;">${harga}</small>
+                        </div>`;
+                    container.innerHTML += cardHTML;
+                }
+            });
+        }
+    } catch (error) {
+        console.error("Gagal memuat data produk:", error);
+    }
+}
+
+// Gunakan ini agar tidak bentrok dengan fungsi lain
+document.addEventListener('DOMContentLoaded', loadPromoFromSheets);
+        init();
+    </script>
+<div id="buy-notification" style="position: fixed; bottom: 100px; left: -300px; background: white; padding: 10px 15px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; z-index: 9999; transition: 0.5s ease-in-out; border-left: 4px solid var(--primary); max-width: 250px;">
+    <div style="background: #f0f4ff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+        <i class="fas fa-shopping-bag"></i>
+    </div>
+    <div>
+        <p id="notif-text" style="font-size: 0.7rem; margin: 0; color: #333; font-weight: bold;"></p>
+        <p id="notif-time" style="font-size: 0.6rem; margin: 0; color: #888;">Baru saja</p>
+    </div>
+</div>
+</body>
+</html>
